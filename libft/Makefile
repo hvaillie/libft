@@ -6,7 +6,7 @@
 #    By: hvaillie <hvaillie@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2017/11/07 17:14:41 by hvaillie          #+#    #+#              #
-#    Updated: 2017/12/04 21:00:46 by hvaillie         ###   ########.fr        #
+#    Updated: 2017/12/08 17:26:47 by hvaillie         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -34,6 +34,8 @@ SRC = ft_strlen.c ft_strdup.c    ft_strcpy.c   ft_strncpy.c  ft_strcat.c   \
 
 OBJ = $(SRC:.c=.o)
 
+SRC_PATH = srcs/
+
 # COLORS
 C_NO			=	"\033[00m"
 C_OK			=	"\033[35m"
@@ -52,8 +54,8 @@ $(NAME): $(OBJ)
 	@ranlib $(NAME)
 	@echo "Compiling" [ $(NAME) ] $(SUCCESS)
 
-%.o: %.c
-	@$(CC) -c -o $@ $< $(FLAGS) -I $(INCLUDE) 
+%.o: $(SRC_PATH)/%.c
+	@$(CC) -c -o $@ $< $(FLAGS) -I $(INCLUDE)
 	@echo "Linking" [ $< ] $(OK)
 
 
