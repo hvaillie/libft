@@ -31,7 +31,7 @@ SRC = ft_strlen.c ft_strdup.c    ft_strcpy.c   ft_strncpy.c  ft_strcat.c   \
 	 ft_lstmap.c  ft_lstaddlast.c ft_lstdelm.c \
 	 ft_isupper.c ft_islower.c   ft_issepar.c  ft_lgint.c    ft_abs.c \
 	 ft_min.c     ft_max.c       ft_sqrt.c     ft_strchrx.c  ft_sqrtround.c \
-	 ft_itoa_base.c
+	 ft_itoa_base.c ft_atoi_base.c ft_strnchr.c
 
 OBJ = $(SRC:.c=.o)
 
