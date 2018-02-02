@@ -26,7 +26,7 @@ static int		countstr(char const *s, char c)
 
 	i = 0;
 	nb = 0;
-	while (s[i] != '\0')
+	while (s[i])
 	{
 		while (is_sep(s[i], c))
 			i++;
@@ -43,13 +43,13 @@ static char		*addstr(char const *s, char c, int *i)
 	char	*str;
 	int		j;
 
-	j = 0;
-	while (!(is_sep(s[*i + j], c)))
+	j = *i;
+	while (s[j] && !(is_sep(s[j], c)))
 		j++;
 	if (!(str = ft_strnew(j)))
 		return (NULL);
 	j = 0;
-	while (!(is_sep(s[*i], c)))
+	while (s[*i] && !(is_sep(s[*i], c)))
 	{
 		str[j] = s[*i];
 		j++;
